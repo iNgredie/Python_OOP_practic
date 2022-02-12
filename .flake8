@@ -1,0 +1,16 @@
+[flake8]
+ignore =
+  D101,
+  E501,
+  W503
+exclude =
+  .git,
+  .idea,
+  .pytest_cache,
+  venv,
+  __pycache__,
+  build,
+  dist
+  tests
+  tests_hard
+count = True
