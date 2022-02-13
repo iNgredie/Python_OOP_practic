@@ -21,3 +21,34 @@
 
 В блоке if "__name__" == "__main__": создать объект класса MFU. Просмотреть MRO
 """
+from abc import ABC, abstractmethod
+
+
+class Device(ABC):
+
+    @abstractmethod
+    def process_doc(self, name: str):
+        raise NotImplementedError
+
+
+class Scanner(Device):
+
+    def process_doc(self, name: str) -> str:
+        return f'Сканирую документ: {name}'
+
+
+class Copier(Device):
+
+    def process_doc(self, name: str) -> str:
+        return f'Делаю копию: {name}'
+
+
+class MFU(Scanner, Copier):
+
+    def process_doc(self, name: str) -> str:
+        return f'Сканирую, отправляю факс: {name}'
+
+
+if __name__ == '__main__':
+    mfu = MFU()
+    print(mfu.__class__.mro())
