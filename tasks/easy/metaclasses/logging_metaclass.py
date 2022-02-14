@@ -7,3 +7,17 @@
 Написать логгирующий метакласс LogMeta, который ко всем методам класса добавляет
 функционал декоратора log_decorator.
 """
+from abc import ABC
+
+
+def log_decorator(func):
+    def wrapper(*args, **kwargs):
+        print(f'{func.__name__} с args: {args} и kwargs: {kwargs}')
+        print(f'Выполненно {func.__name__}')
+        return func()
+    return wrapper
+
+
+@log_decorator
+class LogMeta(metaclass=ABC):
+    pass
