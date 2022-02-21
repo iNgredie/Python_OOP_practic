@@ -24,19 +24,19 @@ https://www.youtube.com/watch?v=8o7ZKTvZpLc
 class AmericanPerson:
 
     def i_love_science(self):
-        print('I love science')
+        return 'I love science'
 
 
 class RussianPerson:
 
     def i_love_science(self):
-        print('Я люблю науку')
+        return 'Я люблю науку'
 
 
 class GermanyPerson:
 
     def i_love_science(self):
-        print('ich liebe Wissenschaft')
+        return 'ich liebe Wissenschaft'
 
 
 def person_love_science(obj):
