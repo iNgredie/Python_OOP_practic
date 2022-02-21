@@ -34,8 +34,8 @@ class Cat(Animal):
         super().__init__(name)
         self.name = name
 
-    def says(self) -> None:
-        print(f'{self.name} - кошка. Говорит МЯУ!')
+    def says(self) -> str:
+        return f'{self.name} - кошка. Говорит МЯУ!'
 
 
 class Dog(Animal):
@@ -45,8 +45,8 @@ class Dog(Animal):
         super().__init__(name)
         self.name = name
 
-    def says(self) -> None:
-        print(f'{self.name} - собака. Говорит ГАВ!')
+    def says(self) -> str:
+        return f'{self.name} - собака. Говорит ГАВ!'
 
 
 class Cow(Animal):
@@ -56,5 +56,5 @@ class Cow(Animal):
         super().__init__(name)
         self.name = name
 
-    def says(self) -> None:
-        print(f'{self.name} - корова. Говорит МУ!')
+    def says(self) -> str:
+        return f'{self.name} - корова. Говорит МУ!'
