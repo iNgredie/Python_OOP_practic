@@ -48,12 +48,12 @@ class LibraryReader(Person):
         self.books = set()
 
     def take_books(self, *args):
-        self.books = set(args)
+        self.books.update(set(args))
 
         if len(args) > 3:
             return f'{self.fullname} взял(а) 4 книги'
 
-        return f'{self.fullname} взял(а) книги: {", ".join(args)}'
+        return f'{self.fullname} взял(а) книги: {", ".join(sorted(list(args)))}'
 
     def return_book(self, *args):
 
