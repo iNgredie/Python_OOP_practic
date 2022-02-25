@@ -61,6 +61,8 @@ class LibraryReader(Person):
         if diff:
             raise ValueError(f'{self.fullname} не брал: {diff}')
 
+        self.books -= set(args)
+
         if len(args) > 3:
             return f'{self.fullname} вернул(а) 4 книги'
 
