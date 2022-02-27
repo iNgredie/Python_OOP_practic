@@ -59,7 +59,7 @@ class Arena:
     def __init__(self, warriors: List[Warrior] = None):
         self.warriors = warriors if warriors else []
 
-    def add_warriors(self, warrior: Warrior):
+    def add_warrior(self, warrior: Warrior):
         if warrior in self.warriors:
             raise ValueError('Воин уже на арене')
 
@@ -67,7 +67,7 @@ class Arena:
         print(f'{warrior.name} участвует в битве')
 
     def choose_warrior(self):
-        return random.choices(self.warriors, k=1)
+        return random.choices(self.warriors, k=1)[0]
 
     def battle(self):
         if len(self.warriors) < 2:
@@ -82,7 +82,7 @@ class Arena:
             if defender.health_points == 0:
                 self.warriors.remove(defender)
                 print(f'{defender.name} пал в битве')
-        winner = self.warriors.pop()
+        winner = self.warriors[0]
         print(f'Победил воин: {winner.name}')
         return winner
 
