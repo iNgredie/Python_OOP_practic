@@ -57,7 +57,7 @@ class Transport(ABC):
 
     @abstractmethod
     def move(self, num_km):
-        if num_km < 0:
+        if num_km <= 0:
             raise ValueError('Расстояние должно быть положительным числом')
         self.mileage += num_km
 
@@ -79,7 +79,7 @@ class Car(Transport):
 
     def move(self, num_km):
         super().move(num_km)
-        return f'{self.brand} {self.model} ({self.color} - {self.issue_year}) проехала {self.mileage}'
+        return f'{self.brand} {self.model} ({self.color} - {self.issue_year}) проехала {self.mileage} километров'
 
 
 class Airplane(Transport):
@@ -99,4 +99,4 @@ class Airplane(Transport):
 
     def move(self, num_km):
         super().move(num_km)
-        return f'{self.brand} {self.model} ({self.color} - {self.issue_year}) пролетел {self.mileage}'
+        return f'{self.brand} {self.model} ({self.color} - {self.issue_year}) пролетел {self.mileage} километров'
