@@ -18,14 +18,11 @@ CURRENT_YEAR = date.today().year
 
 
 class BookCard:
-    __author: str
-    __title: str
-    __year: int
 
     def __init__(self, author: str, tittle: str, year: int):
-        self.__author = author
-        self.__title = tittle
-        self.__year = year
+        self.author = author
+        self.title = tittle
+        self.year = year
 
     def __eq__(self, other):
         return self.__year == other.year
@@ -61,10 +58,10 @@ class BookCard:
         if not isinstance(value, int):
             raise ValueError('Year variable must contain only integer values')
 
-        if value < 0:
+        if value < 1:
             raise ValueError('Year must be greater than 0')
 
-        if value < self.__year:
+        if value > CURRENT_YEAR:
             raise ValueError('Year must be greater than current year')
 
         self.__year = value
